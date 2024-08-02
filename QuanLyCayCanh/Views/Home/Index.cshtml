@@ -1,0 +1,79 @@
+﻿@model List<DoAn_LTWeb_TRINHCHITAI.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    var UserName = Context.Request.Cookies["auth"];
+    var role = Context.Request.Cookies["role"];
+}
+
+<h3>
+    Hello
+    @if (UserName == null)
+    {
+        <span> Guess. <a href="/User/Login">Login</a></span>
+    }
+    else
+    {
+        <span> @UserName.Value. <a href="/User/Logout">Logout</a></span>
+    }
+</h3>
+<table class="table table-bodered">
+    <tr>
+        @foreach (var product in Model)
+        {
+            if (product.Category.CategoryName == "phongcanh")
+            {
+                <td>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <a href="/Home/ChiTietSP/@product.ProductID"><img class="margin:auto" width=200px src=~/Content/Image/@product.Image></a>
+                            <h5 class="card-title ">@product.ProductName</h5>
+                            <p class="card-text">Giá:@product.ProductPrice</p>
+                            <a href="#" class="btn " style="border:1px solid">Mua hàng</a>
+                        </div>
+                    </div>
+                </td>
+            }
+
+        }
+    </tr>
+    <tr>
+        @foreach (var product in Model)
+        {
+            if (product.Category.CategoryName == "phongthuy")
+            {
+                <td>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <a href="/Home/ChiTietSP/@product.ProductID"><img width=200px src=~/Content/Image/@product.Image></a>
+                            <h5 class="card-title">@product.ProductName</h5>
+                            <p class="card-text">Giá:@product.ProductPrice</p>
+                            <a href="#" class="btn " style="border:1px solid">Mua hàng</a>
+                        </div>
+                    </div>
+                </td>
+            }
+        }
+    </tr>
+    <tr>
+        @foreach (var product in Model)
+        {
+            if (product.Category.CategoryName == "hoa")
+            {
+                <td>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <a href="/Home/ChiTietSP/@product.ProductID"><img width=200px src=~/Content/Image/@product.Image></a>
+                            <h5 class="card-title">@product.ProductName</h5>
+                            <p class="card-text">Giá:@product.ProductPrice</p>
+                            <a href="#" class="btn " style="border:1px solid">Mua hàng</a>
+                        </div>
+                    </div>
+                </td>
+            }
+
+        }
+    </tr>
+</table>
+<script src="https://cdn.tailwindcss.com"></script>

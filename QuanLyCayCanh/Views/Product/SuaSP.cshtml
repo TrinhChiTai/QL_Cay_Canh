@@ -1,0 +1,64 @@
+﻿@model DoAn_LTWeb_TRINHCHITAI.Models.Product
+
+@{
+    ViewBag.Title = "SuaSP";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@using (Html.BeginForm("SuaSP", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.ProductID, "ID sản phẩm")
+            @Html.TextBoxFor(model => model.ProductID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ProductID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.ProductName, "Tên sản phẩm")
+            @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.Description, "Mô tả sản phẩm")
+            @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.ProductPrice, "Giá sản phẩm")
+            @Html.TextBoxFor(model => model.ProductPrice, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ProductPrice, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.Image, "Chọn hình")
+            @Html.TextBoxFor(model => model.Image, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.CategoryID, "Loại sản phẩm")
+            @Html.TextBoxFor(model => model.CategoryID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+        </div>
+    </div>
+}

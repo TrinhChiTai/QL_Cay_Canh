@@ -1,0 +1,56 @@
+﻿@model DoAn_LTWeb_TRINHCHITAI.Models.User
+
+@{
+    ViewBag.Title = "XoaUser";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@using (Html.BeginForm("XoaUser", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.UserId, "ID người dùng")
+            @Html.TextBoxFor(model => model.UserId, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.UserName, "Tên người dùng")
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.Password, "Mật Khẩu")
+            @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.EmailAddress, "Email")
+            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.Role, "Phân Quyền")
+            @Html.TextBoxFor(model => model.Role, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px">
+        <div class="col-2"></div>
+        <div class="col-6">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+        </div>
+    </div>
+}

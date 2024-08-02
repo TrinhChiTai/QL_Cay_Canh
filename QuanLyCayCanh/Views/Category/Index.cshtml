@@ -1,0 +1,23 @@
+﻿@model List<DoAn_LTWeb_TRINHCHITAI.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<table class="table table-bodered">
+    <tr>
+        @foreach (var product in Model)
+        {
+            <td>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title ">@product.CategoryID</h5>
+                        <p class="card-text">Giá:@product.CategoryName</p>
+                    </div>
+                </div>
+            </td>
+         }
+    </tr>
+    
+    </tr>
+</table>
